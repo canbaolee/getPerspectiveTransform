@@ -1,5 +1,5 @@
 # getPerspectiveTransform
-使用js实现opencv中的getPerspectiveTransform方法，计算透视变换矩阵，参数是8个点，前四个是原始点，后四个是变换后的点，
+js实现opencv中的getPerspectiveTransform方法，计算透视变换矩阵，参数是8个点，前四个是原始点，后四个是变换后的点，可以计算出4*4的矩阵，用于css的transform参数
 
 ```
 <script src="./getPerspectiveTransform.js"></script>
