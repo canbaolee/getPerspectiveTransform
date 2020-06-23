@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>透视变换</title>
+  <style>
+    html {
+      margin: 0rem;
+      padding: 0rem;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0rem;
+      padding: 0rem;
+      width: 100%;
+      height: 100%;
+    }
+    .demo{
+      margin: 100px auto;
+      width: 320px;
+      height: 240px;
+    }
+
+  </style>
+</head>
+
+<body>
+  原图
+  <div class="demo">
+    <img src="./20141211171952893.jpeg">
+  </div>
+  调整后图片
+  <div class="demo" style="overflow: hidden;">
+    <img id="image" src="./20141211171952893.jpeg">
+  </div>
+</body>
+<script src="./getPerspectiveTransform.js"></script>
+<script>
+  const op = [[-100, -49, 0, 1], [1, -91, 0, 1], [-12, 101, 0, 1], [117, 25, 0, 1]];
+  const np = [[-160, -120, 0, 1], [160, -120, 0, 1], [-160, 120, 0, 1], [160, 120, 0, 1]]
+  const m = getPerspectiveTransform(...op, ...np)
+  document.querySelector('#image').style.transform = 'matrix3d(' + m.join(',') + ')';
+</script>
+</html>
